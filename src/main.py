@@ -1,7 +1,10 @@
 #!/usr/bin/env python
+
+import math
 import rospy
-from commands.loop import loop
-from commands.prepare import prepare
+from core.loop import loop
+from core.state import State
+from core.prepare import prepare
 from geometry_msgs.msg import Twist
 
 if __name__ == '__main__':
@@ -20,14 +23,14 @@ if __name__ == '__main__':
     thread = rospy.Rate(1)
 
     # State dictionary.
-    state = {
-      'x': 0,
-      'delta': 0,
-    }
+    state = State(
+      math.pi / 12,
+      math.sin,
+    )
 
     # Creates loop that does not exit unless the core was shut down.
     while not rospy.is_shutdown():
-      state = loop(pub, state)
+      loop(pub, state)
 
       thread.sleep()
 
