@@ -2,7 +2,8 @@
 <package format="2">
   <name>trig_functions</name>
   <version>0.0.0</version>
-  <description>Makes turtle bot draw trig functions.</description>
+  <description>
+Tutorial package for turtlebot_sim. This subscriber attempts to render given function of x.</description>
 
   <maintainer email="bausanomichal@gmail.com">Michael Bausano</maintainer>
 
@@ -14,6 +15,6 @@
 
   <depend>roscpp</depend>
   <depend>rospy</depend>
-  <depend>std_msgs</depend>  
+  <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
 </package>
