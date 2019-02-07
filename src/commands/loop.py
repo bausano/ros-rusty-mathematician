@@ -3,7 +3,7 @@ import rospy
 from geometry_msgs.msg import Twist
 
 # TODO: Move this out to a class.
-dx = math.pi / 4
+dx = math.pi / 12
 f = math.sin
 
 _dxsq = dx * dx
@@ -12,6 +12,7 @@ _dxsq = dx * dx
 #
 # @param pub Publisher instance to send message with
 # @param state State of the program
+# @return New state
 def loop(pub, state):
   x = state['x']
 
