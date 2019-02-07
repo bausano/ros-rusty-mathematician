@@ -2,11 +2,11 @@
 
 import math
 import rospy
-from core.loop import loop
-from core.state import State
 from core.prepare import prepare
 from geometry_msgs.msg import Twist
+from core.subscriber import Subscriber
 
+# ROS Boot.
 if __name__ == '__main__':
   try:
     # Starts a new node with a random hash appended to its name.
@@ -22,15 +22,16 @@ if __name__ == '__main__':
     # frequency. There is maximally one message published per tick.
     thread = rospy.Rate(1)
 
-    # State dictionary.
-    state = State(
-      math.pi / 12,
-      math.sin,
-    )
+    # Subscriber instance.
+    subscriber = Subscriber(pub)
 
     # Creates loop that does not exit unless the core was shut down.
     while not rospy.is_shutdown():
-      loop(pub, state)
+      subscriber.tick(
+        math.pi / 12,
+        math.sin
+        # lambda x: x*x
+      )
 
       thread.sleep()
 
