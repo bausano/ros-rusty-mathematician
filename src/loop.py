@@ -20,8 +20,6 @@ def loop(pub, state):
   message.linear.x = change
   message.angular.z = delta - state['delta']
 
-  print(delta, state['delta'], message.angular.z)
-
   pub.publish(message)
 
   state['delta'] = delta

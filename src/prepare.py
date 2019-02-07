@@ -4,12 +4,12 @@ from geometry_msgs.msg import Twist
 
 def prepare(pub):
   # Size of the field the robot is in divided by two.
-  r = 4
+  r = 7
 
   # Moves the turtle forward, drawing one half of the x axis.
-  move(pub, r, 2)
+  move(pub, r, 4)
   # Moves the turtle backwards twice the length, putting it to the left edge.
-  move(pub, 2 * r, -2)
+  move(pub, 2 * r, -4)
 
 def move(pub, distance, speed):
   message = Twist()
