@@ -29,21 +29,3 @@ def loop(pub, state):
 
   return state
 
-def move(pub, distance, speed):
-  message = Twist()
-  message.linear.x = speed
-
-  while not rospy.is_shutdown():
-    traveled = 0
-    t0 = rospy.Time.now().to_sec()
-
-    while (math.fabs(traveled) < distance):
-      pub.publish(message)
-
-      t1 = rospy.Time.now().to_sec()
-      traveled = speed * (t1 - t0)
-
-    message.linear.x = 0
-    pub.publish(message)
-
-    break
