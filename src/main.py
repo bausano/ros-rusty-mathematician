@@ -29,7 +29,7 @@ if __name__ == '__main__':
     subscriber.tick(
       math.pi / 12,
       math.sin
-      # lambda x: x*x
+      # lambda x: 1 / (1 + math.pow(math.e, -x))
     )
 
     # Mimics frequency functionality.
