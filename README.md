@@ -1,4 +1,4 @@
-# Rusty Mathematician
+# Rosty Mathematician
 
 Tutorial package for `turtlebot_sim`. This subscriber attempts to render given function of `x`.
 
@@ -20,7 +20,7 @@ To start the UI, run
 
 To start the subscriber, run
 
-`$ rosrun rusty_mathematician main.py`
+`$ rosrun rosty_mathematician main.py`
 
 ### The Subscriber API
 The method `tick` publishes a message to the node.

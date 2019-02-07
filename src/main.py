@@ -9,10 +9,10 @@ from core.subscriber import Subscriber
 # ROS Boot.
 if __name__ == '__main__':
   # Starts a new node with a random hash appended to its name.
-  rospy.init_node('trig_functions', anonymous=True)
+  rospy.init_node('rosty_matematican', anonymous=True)
 
   # Constructs a new publisher instance that emits messages to the turtle
-  pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=50)
+  pub = rospy.Publisher('/mobile_base/commands/velocity', Twist, queue_size=50)
 
   # Draws x axis and then moves the turtle bot closer to the right edge.
   prepare(pub)
@@ -24,10 +24,10 @@ if __name__ == '__main__':
   # Subscriber instance.
   subscriber = Subscriber(pub)
 
-  # Creates loop that does not exit unless the core was shut down.
+  # Loop that does not exit unless the core was shut down.
   while not rospy.is_shutdown():
     subscriber.tick(
-      math.pi / 12,
+      math.pi / 24,
       math.sin
       # lambda x: 1 / (1 + math.pow(math.e, -x))
     )

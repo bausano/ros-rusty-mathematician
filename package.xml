@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>rusty_mathematician</name>
+  <name>rosty_mathematician</name>
   <version>1.0.0</version>
-  <description>
-Tutorial package for turtlebot_sim. This subscriber attempts to render given function of x.</description>
+  <description>Tutorial package for turtlebot_sim. This subscriber attempts to render given function of x.</description>
 
   <maintainer email="bausanomichal@gmail.com">Michael Bausano</maintainer>
 

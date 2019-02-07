@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(rusty_mathematician)
+project(rosty_mathematician)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
