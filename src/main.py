@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     # Constructs a new rate object on current thread that is used for publishing
     # frequency. There is maximally one message published per tick.
-    thread = rospy.Rate(6.3)
+    thread = rospy.Rate(4)
 
     # State dictionary.
     state = {

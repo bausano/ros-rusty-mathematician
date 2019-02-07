@@ -2,7 +2,7 @@ import math
 import rospy
 from geometry_msgs.msg import Twist
 
-dx = 0.1
+dx = math.pi / 8
 f = math.sin
 
 _dxsq = dx * dx
@@ -10,24 +10,22 @@ _dxsq = dx * dx
 def loop(pub, state):
   x = state['x']
 
-  change = math.sqrt(
-    _dxsq + math.pow(f(x + dx) + f(x), 2)
-  )
+  dy = f(x + dx) - f(x)
 
-  delta = math.acos(dx / change) - state['delta']
+  change = math.sqrt(_dxsq + math.pow(dy, 2))
 
-  print(delta)
+  delta = math.acos(dx / change) * math.pow(dy, 0)
 
   message = Twist()
   message.linear.x = change
-  message.angular.z = delta
+  message.angular.z = delta - state['delta']
+
+  print(delta, state['delta'], message.angular.z)
 
   pub.publish(message)
 
-  state['delta'] = change
+  state['delta'] = delta
   state['x'] += dx
-
-  print(state)
 
   return state
 
