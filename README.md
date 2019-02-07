@@ -29,4 +29,4 @@ Specify relationship between `Hz` and `dx`.
 
 ![sinus attempt](_screenshots/sin.png "Attempting sinus")
 
-![sinus attempt](_screenshots/axis.png "1 / (1 + E^-x)")
+![sinus attempt](_screenshots/natural.png "1 / (1 + E^-x)")
