@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>trig_functions</name>
+  <name>rusty_mathematician</name>
   <version>0.0.0</version>
   <description>
 Tutorial package for turtlebot_sim. This subscriber attempts to render given function of x.</description>
